@@ -1,67 +1,80 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Capital Avito — привлекаем инвесторов через Avito</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    html, body { margin: 0; padding: 0; font-family: 'Manrope', sans-serif; color: #fff; background:#0e0a21; }
-    section { padding: 80px 0; position: relative; overflow:hidden; }
-    h1,h2 { font-weight:700; }
-    .container { width:90%; max-width:1280px; margin:auto; }
-    .hero { display:flex; align-items:center; justify-content:space-between; min-height:100vh; background:radial-gradient(circle at 30% 20%, #1e1448, #0e0a21); }
-    .hero h1 { font-size:clamp(2rem,5vw,3.5rem); margin-bottom:1rem; }
-    .hero p { font-size:1.2rem; color:#a5a3c7; }
-    .ruble { width:220px; height:220px; border-radius:50%; background:radial-gradient(circle, rgba(93,59,255,1), rgba(23,7,84,1)); display:flex; align-items:center; justify-content:center; box-shadow:0 0 40px rgba(93,59,255,0.6); animation:float 6s ease-in-out infinite; }
-    .ruble svg { width:80px; height:80px; fill:#fff; }
-    @keyframes float {0%{transform:translateY(0);}50%{transform:translateY(-20px);}100%{transform:translateY(0);}}
-    .partners img { width:160px; height:80px; object-fit:contain; filter:grayscale(1); transition:transform .3s, filter .3s; }
-    .partners img:hover { filter:none; transform:scale(1.1); }
-    .metrics { display:grid; gap:2rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); margin-top:3rem; }
-    .metric { background:rgba(32,24,68,.8); border-radius:12px; padding:2rem; text-align:center; border:1px solid rgba(93,59,255,.4); }
-    .metric h3 { font-size:2rem; color:#5d3bff; margin-bottom:.5rem; }
-    .comparison { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top:2rem; }
-    .comp-card { background:rgba(32,24,68,.8); padding:1.5rem; border-radius:12px; text-align:center; }
-    .map { background:url('https://via.placeholder.com/1200x600/141414/FFFFFF?text=Map') center/cover no-repeat; position:relative; }
-    .city { position:absolute; width:12px; height:12px; background:#ff3a5e; border-radius:50%; box-shadow:0 0 10px 4px rgba(255,58,94,.8); animation:pulse 2s infinite; }
-    @keyframes pulse {0%{opacity:.7;}50%{opacity:1;transform:scale(1.5);}100%{opacity:.7;}}
-    .graph { height:300px; }
-    .cta { text-align:center; background:#120b25; }
-    .cta a { display:inline-block; margin-top:1.5rem; padding:1rem 2rem; background:#5d3bff; color:#fff; text-decoration:none; border-radius:50px; transition:background .3s, transform .3s; }
-    .cta a:hover { background:#7a5bff; transform:translateY(-3px); }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Manrope',sans-serif;background:#0e0a21;color:#fff;overflow-x:hidden}
+    h1,h2{font-weight:700}
+    .container{width:90%;max-width:1280px;margin:0 auto}
+    header.nav{position:fixed;top:0;left:0;width:100%;padding:15px 5%;background:rgba(14,10,33,.8);backdrop-filter:blur(6px);display:flex;justify-content:space-between;z-index:1000}
+    header.nav a{color:#fff;text-decoration:none;margin-left:20px;padding:6px 12px;border-radius:20px;border:1px solid #5d3bff;transition:background .3s}
+    header.nav a:hover{background:#5d3bff}
+    section{padding:100px 0}
+    .hero{display:flex;align-items:center;justify-content:space-between;min-height:100vh;padding-top:120px;background:radial-gradient(circle at 30% 30%,#1e1448,#0d0a21)}
+    .hero .text{max-width:560px;padding-left:60px}
+    .hero p{color:#a5a3c7;font-size:1.1rem}
+    .ruble{position:relative;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,#5d3bff,#170754);display:flex;align-items:center;justify-content:center;animation:float 6s ease-in-out infinite}
+    .ruble::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 40px rgba(93,59,255,.6);animation:pulse 3s infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+    @keyframes pulse{0%,100%{box-shadow:0 0 20px rgba(93,59,255,.4)}50%{box-shadow:0 0 60px rgba(93,59,255,.9)}}
+    .partners img{width:160px;height:80px;object-fit:contain;filter:grayscale(1);transition:.3s}
+    .partners img:hover{filter:none;transform:scale(1.1);box-shadow:0 0 15px rgba(93,59,255,.6)}
+    .metrics{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:2rem}
+    .metric{background:rgba(32,24,68,.8);border-radius:12px;padding:2rem;text-align:center;border:1px solid rgba(93,59,255,.4)}
+    .metric h3{font-size:2rem;color:#5d3bff;margin-bottom:.5rem}
+    .comparison{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:2rem}
+    .comp-card{background:rgba(32,24,68,.85);padding:1.5rem;border-radius:12px;text-align:center;transition:.3s}
+    .comp-card:hover{transform:translateY(-6px);box-shadow:0 15px 30px rgba(0,0,0,.3)}
+    .comp-card.avito{background:rgba(93,59,255,.9)}
+    .map{position:relative;height:500px;background:url('https://i.imgur.com/EG4cv6z.png') center/contain no-repeat}
+    .city{position:absolute;width:12px;height:12px;background:#ff3a5e;border-radius:50%;box-shadow:0 0 10px 4px rgba(255,58,94,.8);animation:pulse 2s infinite}
+    .why-list{display:flex;flex-direction:column;gap:30px;max-width:900px;margin:0 auto}
+    .why-item{display:flex;gap:20px;align-items:flex-start}
+    .why-icon{background:#5d3bff;color:#fff;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .cta{text-align:center;background:#120b25}
+    .cta a{display:inline-block;margin-top:1.5rem;padding:1rem 2rem;background:#5d3bff;color:#fff;text-decoration:none;border-radius:50px;transition:.3s}
+    .cta a:hover{background:#7a5bff;transform:translateY(-3px)}
+    @media(max-width:768px){.hero{flex-direction:column-reverse;text-align:center}.hero .text{padding-left:0}.hero .ruble{margin-bottom:40px}}
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>Привлекаем инвесторов через Avito</h1>
-      <p>150 заявок от инвесторов при бюджете 70 000 ₽. Конверсия — 2–3%</p>
-    </div>
-    <div class="container" style="display:flex;justify-content:center;">
-      <div class="ruble">
-        <svg viewBox="0 0 64 64"><path d="M24 8h19a13 13 0 0 1 0 26H16m0 0v22m0-11h27" stroke="white" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
-      </div>
+  <header class="nav">
+    <div class="logo">Capital Avito</div>
+    <div>
+      <a href="tel:+79615259105">+7 961 525 91 05</a>
+      <a href="https://t.me/potentiaal" target="_blank">@potentiaal</a>
     </div>
   </header>
 
-  <section>
+  <section class="hero" id="hero">
+    <div class="text">
+      <h1>ПРИВЛЕКАЕМ ИНВЕСТОРОВ ЧЕРЕЗ AVITO</h1>
+      <p>150 заявок от инвесторов при бюджете 70 000 ₽. Конверсия — 2–3%.</p>
+    </div>
+    <div class="ruble">
+      <svg viewBox="0 0 64 64"><path d="M24 8h19a13 13 0 0 1 0 26H16v22m0-11h27" stroke="white" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
+    </div>
+  </section>
+
+  <section id="partners">
     <div class="container">
-      <h2>Партнеры:</h2>
-      <div class="partners" style="display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;margin-top:2rem;">
-        <img src="https://via.placeholder.com/160x80?text=Estadel" alt="estadel" />
-        <img src="https://via.placeholder.com/160x80?text=Sklad" alt="sklad" />
-        <img src="https://via.placeholder.com/160x80?text=Buhlogo" alt="buhlogo" />
-        <img src="https://via.placeholder.com/160x80?text=Angel" alt="angel" />
+      <h2>Нам доверяют</h2>
+      <div class="partners" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:2rem">
+        <img src="https://i.imgur.com/x1Z6FzB.png" alt="estadel">
+        <img src="https://i.imgur.com/vI2qbjB.png" alt="sklad">
+        <img src="https://i.imgur.com/oEIXRkS.png" alt="buhlogo">
+        <img src="https://i.imgur.com/TMLjqgQ.png" alt="angel">
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="benefits">
     <div class="container">
       <h2>Что вы получаете</h2>
       <div class="metrics">
@@ -72,44 +85,40 @@
     </div>
   </section>
 
-  <section>
+  <section id="compare">
     <div class="container">
       <h2>Почему Avito эффективнее других каналов?</h2>
       <div class="comparison">
-        <div class="comp-card"><strong>Avito</strong><br>заявка — 300–900 ₽</div>
-        <div class="comp-card"><strong>Яндекс.Директ</strong><br>5 000–10 000 ₽</div>
-        <div class="comp-card"><strong>Лидогенераторы</strong><br>2 000–7 000 ₽</div>
+        <div class="comp-card avito"><strong>Avito</strong><br>заявка — 300–900 ₽</div>
+        <div class="comp-card"><strong>Яндекс.Директ</strong><br>заявка — 5 000–10 000 ₽</div>
+        <div class="comp-card"><strong>Лидогенераторы</strong><br>заявка — 2 000–7 000 ₽</div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="expertise">
     <div class="container">
       <h2>Почему мы?</h2>
-      <ul style="list-style:none;padding-left:0;">
-        <li>Мы запускали более 30 инвестиционных направлений.</li>
-        <li>Понимаем, как думает инвестор, знаем, какие заголовки и визуалы конвертируют.</li>
-        <li>Помогаем с воронкой, скриптами, аналитикой.</li>
-        <li>У нас видеоуроки по работе с инвесторами.</li>
-        <li>Мы не просто лидогенераторы — мы команда роста.</li>
-      </ul>
+      <div class="why-list">
+        <div class="why-item"><div class="why-icon">1</div><p>Мы запускали более 30 инвестиционных направлений.</p></div>
+        <div class="why-item"><div class="why-icon">2</div><p>Понимаем, как думает инвестор, знаем, какие заголовки и визуалы конвертируют.</p></div>
+        <div class="why-item"><div class="why-icon">3</div><p>Помогаем с воронкой, скриптами и аналитикой, предоставляем видеоуроки.</p></div>
+      </div>
     </div>
   </section>
 
-  <section class="map" style="height:400px;">
+  <section id="geo">
     <div class="container">
-      <h2 style="text-align:center;">Работаем по всей России</h2>
-      <p style="text-align:center;max-width:600px;margin:0 auto;">Наши объявления размещаются в более чем 72 городах. Масштабируем кампании по всей России.</p>
+      <h2>Работаем по всей России</h2>
+      <p>Наши объявления размещаются в более чем 72 городах. Масштабируем кампании по всей России.</p>
+      <div class="map" id="map"></div>
     </div>
-    <div class="city" style="top:40%;left:30%;"></div>
-    <div class="city" style="top:50%;left:50%;"></div>
-    <div class="city" style="top:60%;left:70%;"></div>
   </section>
 
-  <section>
+  <section id="graph-section" class="graph-block">
     <div class="container">
       <h2>Динамика инвестиций</h2>
-      <canvas id="graph" class="graph" width="600" height="300"></canvas>
+      <canvas id="graph" width="700" height="300"></canvas>
     </div>
   </section>
 
@@ -120,27 +129,41 @@
     </div>
   </section>
 
-<script>
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.utils.toArray('section').forEach(sec => {
-    gsap.from(sec.children, { opacity:0, y:40, stagger:0.2, duration:1, scrollTrigger:{trigger:sec,start:'top 80%'} });
-  });
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('section').forEach(s=>{
+      gsap.from(s.children,{opacity:0,y:40,stagger:0.2,duration:1,scrollTrigger:{trigger:s,start:'top 80%'}});
+    });
 
-  const canvas = document.getElementById('graph');
-  const ctx = canvas.getContext('2d');
-  ctx.strokeStyle = '#6c5dd3';
-  ctx.lineWidth = 3;
-  let progress = 0;
-  function draw() {
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.beginPath();
-    ctx.moveTo(0,canvas.height-20);
-    for(let x=0;x<progress;x+=10){ ctx.lineTo(x, canvas.height-20 - Math.sin(x/50)*80 - x/4); }
-    ctx.stroke();
-    progress+=2; if(progress>canvas.width){ progress=0; }
-    requestAnimationFrame(draw);
-  }
-  draw();
-</script>
+    const map=document.getElementById('map');
+    for(let i=0;i<72;i++){
+      const dot=document.createElement('div');
+      dot.className='city';
+      dot.style.top=(5+90*Math.random())+'%';
+      dot.style.left=(5+90*Math.random())+'%';
+      map.appendChild(dot);
+    }
+
+    const c=document.getElementById('graph');
+    const ctx=c.getContext('2d');
+    ctx.strokeStyle='#6c5dd3';
+    ctx.lineWidth=3;
+    let t=0;
+    function draw(){
+      ctx.clearRect(0,0,c.width,c.height);
+      ctx.beginPath();
+      ctx.moveTo(0,c.height-20);
+      for(let x=0;x<c.width;x++){
+        const y=c.height-20-Math.sin((x+t)/50)*60-x/4;
+        ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+      t+=2;if(t>c.width)t=0;
+      requestAnimationFrame(draw);
+    }
+    draw();
+  </script>
 </body>
 </html>
