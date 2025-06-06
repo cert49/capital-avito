@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Capital Avito — привлекаем инвесторов через Avito</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -467,9 +467,32 @@
         font-size: 1.8rem;
       }
     }
-  </style>
-</head>
-<body>
+
+    html, body { margin: 0; padding: 0; font-family: 'Manrope', sans-serif; color: #fff; background:#0e0a21; }
+    section { padding: 80px 0; position: relative; overflow:hidden; }
+    h1,h2 { font-weight:700; }
+    .container { width:90%; max-width:1280px; margin:auto; }
+    .hero { display:flex; align-items:center; justify-content:space-between; min-height:100vh; background:radial-gradient(circle at 30% 20%, #1e1448, #0e0a21); }
+    .hero h1 { font-size:clamp(2rem,5vw,3.5rem); margin-bottom:1rem; }
+    .hero p { font-size:1.2rem; color:#a5a3c7; }
+    .ruble { width:220px; height:220px; border-radius:50%; background:radial-gradient(circle, rgba(93,59,255,1), rgba(23,7,84,1)); display:flex; align-items:center; justify-content:center; box-shadow:0 0 40px rgba(93,59,255,0.6); animation:float 6s ease-in-out infinite; }
+    .ruble svg { width:80px; height:80px; fill:#fff; }
+    @keyframes float {0%{transform:translateY(0);}50%{transform:translateY(-20px);}100%{transform:translateY(0);}}
+    .partners img { width:160px; height:80px; object-fit:contain; filter:grayscale(1); transition:transform .3s, filter .3s; }
+    .partners img:hover { filter:none; transform:scale(1.1); }
+    .metrics { display:grid; gap:2rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); margin-top:3rem; }
+    .metric { background:rgba(32,24,68,.8); border-radius:12px; padding:2rem; text-align:center; border:1px solid rgba(93,59,255,.4); }
+    .metric h3 { font-size:2rem; color:#5d3bff; margin-bottom:.5rem; }
+    .comparison { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top:2rem; }
+    .comp-card { background:rgba(32,24,68,.8); padding:1.5rem; border-radius:12px; text-align:center; }
+    .map { background:url('https://via.placeholder.com/1200x600/141414/FFFFFF?text=Map') center/cover no-repeat; position:relative; }
+    .city { position:absolute; width:12px; height:12px; background:#ff3a5e; border-radius:50%; box-shadow:0 0 10px 4px rgba(255,58,94,.8); animation:pulse 2s infinite; }
+    @keyframes pulse {0%{opacity:.7;}50%{opacity:1;transform:scale(1.5);}100%{opacity:.7;}}
+    .graph { height:300px; }
+    .cta { text-align:center; background:#120b25; }
+    .cta a { display:inline-block; margin-top:1.5rem; padding:1rem 2rem; background:#5d3bff; color:#fff; text-decoration:none; border-radius:50px; transition:background .3s, transform .3s; }
+    .cta a:hover { background:#7a5bff; transform:translateY(-3px); }
+
   <header class="nav">
     <div class="logo">Capital Avito</div>
     <div>
@@ -498,9 +521,27 @@
         <img class="reveal" src="https://i.imgur.com/vI2qbjB.png" alt="sklad">
         <img class="reveal" src="https://i.imgur.com/oEIXRkS.png" alt="buhlogo">
         <img class="reveal" src="https://i.imgur.com/TMLjqgQ.png" alt="angel">
+
+  <header class="hero">
+    <div class="container">
+      <h1>Привлекаем инвесторов через Avito</h1>
+      <p>150 заявок от инвесторов при бюджете 70 000 ₽. Конверсия — 2–3%</p>
+    </div>
+    <div class="container" style="display:flex;justify-content:center;">
+      <div class="ruble">
+        <svg viewBox="0 0 64 64"><path d="M24 8h19a13 13 0 0 1 0 26H16m0 0v22m0-11h27" stroke="white" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
       </div>
     </div>
-  </section>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2>Партнеры:</h2>
+      <div class="partners" style="display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;margin-top:2rem;">
+        <img src="https://via.placeholder.com/160x80?text=Estadel" alt="estadel" />
+        <img src="https://via.placeholder.com/160x80?text=Sklad" alt="sklad" />
+        <img src="https://via.placeholder.com/160x80?text=Buhlogo" alt="buhlogo" />
+        <img src="https://via.placeholder.com/160x80?text=Angel" alt="angel" />
 
   <section id="benefits">
     <div class="container">
@@ -518,9 +559,13 @@
           <h3>3%</h3>
           <p>конверсия в инвестиции</p>
         </div>
-      </div>
-    </div>
-  </section>
+  <section>
+    <div class="container">
+      <h2>Что вы получаете</h2>
+      <div class="metrics">
+        <div class="metric"><h3>150</h3><p>заявок в месяц от инвесторов</p></div>
+        <div class="metric"><h3>70 000 ₽</h3><p>рекламный бюджет</p></div>
+        <div class="metric"><h3>3%</h3><p>конверсия в инвестиции</p></div>
 
   <section id="compare">
     <div class="container">
@@ -562,9 +607,14 @@
           <div class="point-icon">4</div>
           <p class="point-text">Мы не просто лидогенераторы — мы команда роста.</p>
         </div>
-      </div>
-    </div>
-  </section>
+
+  <section>
+    <div class="container">
+      <h2>Почему Avito эффективнее других каналов?</h2>
+      <div class="comparison">
+        <div class="comp-card"><strong>Avito</strong><br>заявка — 300–900 ₽</div>
+        <div class="comp-card"><strong>Яндекс.Директ</strong><br>5 000–10 000 ₽</div>
+        <div class="comp-card"><strong>Лидогенераторы</strong><br>2 000–7 000 ₽</div>
 
   <section id="process">
     <div class="container">
@@ -633,11 +683,35 @@
         <div class="question">Вы работаете по всей России?</div>
         <div class="answer">Да, мы запускаем кампании в 72+ городах и масштабируем при необходимости.</div>
       </div>
+
+  <section>
+    <div class="container">
+      <h2>Почему мы?</h2>
+      <ul style="list-style:none;padding-left:0;">
+        <li>Мы запускали более 30 инвестиционных направлений.</li>
+        <li>Понимаем, как думает инвестор, знаем, какие заголовки и визуалы конвертируют.</li>
+        <li>Помогаем с воронкой, скриптами, аналитикой.</li>
+        <li>У нас видеоуроки по работе с инвесторами.</li>
+        <li>Мы не просто лидогенераторы — мы команда роста.</li>
+      </ul>
     </div>
   </section>
 
-  <section class="cta">
+  <section class="map" style="height:400px;">
     <div class="container">
+      <h2 style="text-align:center;">Работаем по всей России</h2>
+      <p style="text-align:center;max-width:600px;margin:0 auto;">Наши объявления размещаются в более чем 72 городах. Масштабируем кампании по всей России.</p>
+    </div>
+    <div class="city" style="top:40%;left:30%;"></div>
+    <div class="city" style="top:50%;left:50%;"></div>
+    <div class="city" style="top:60%;left:70%;"></div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Динамика инвестиций</h2>
+      <canvas id="graph" class="graph" width="600" height="300"></canvas>
+
       <h2 class="reveal">Хотите запуск с результатом?</h2>
       <a class="reveal" href="https://t.me/potentiaal" target="_blank">Написать в Telegram</a>
     </div>
@@ -703,5 +777,31 @@
       });
     });
   </script>
-</body>
-</html>
+
+      <h2>Хотите запуск с результатом?</h2>
+      <a href="https://t.me/potentiaal" target="_blank">Написать в Telegram</a>
+    </div>
+  </section>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('section').forEach(sec => {
+    gsap.from(sec.children, { opacity:0, y:40, stagger:0.2, duration:1, scrollTrigger:{trigger:sec,start:'top 80%'} });
+  });
+
+  const canvas = document.getElementById('graph');
+  const ctx = canvas.getContext('2d');
+  ctx.strokeStyle = '#6c5dd3';
+  ctx.lineWidth = 3;
+  let progress = 0;
+  function draw() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.beginPath();
+    ctx.moveTo(0,canvas.height-20);
+    for(let x=0;x<progress;x+=10){ ctx.lineTo(x, canvas.height-20 - Math.sin(x/50)*80 - x/4); }
+    ctx.stroke();
+    progress+=2; if(progress>canvas.width){ progress=0; }
+    requestAnimationFrame(draw);
+  }
+  draw();
+</script>
