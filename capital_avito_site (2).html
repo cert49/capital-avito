@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capital Avito — Маркетинг для инвестпроектов</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: linear-gradient(180deg, #0a0d10 0%, #121921 100%);
+      color: #fff;
+      line-height: 1.6;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      animation: fadeIn 1.5s ease-out;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #a0aec0;
+      margin-top: 0.5rem;
+    }
+    .section {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      animation: fadeInUp 1s ease-out;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .logos {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .logos img {
+      max-height: 80px;
+      filter: brightness(0.9);
+      transition: transform 0.3s ease;
+    }
+    .logos img:hover {
+      transform: scale(1.05);
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .metric {
+      background: #1c232b;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .metric h3 {
+      font-size: 2rem;
+      color: #3fd0ff;
+    }
+    .metric p {
+      margin-top: 0.5rem;
+      color: #cbd5e0;
+    }
+    .expertise {
+      background: #11161c;
+      border-left: 4px solid #3fd0ff;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      border-radius: 8px;
+    }
+    .expertise p {
+      margin-bottom: 1rem;
+    }
+    .cta {
+      margin-top: 4rem;
+      text-align: center;
+    }
+    .cta a {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #3fd0ff;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .cta a:hover {
+      background: #60e1ff;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .section h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Capital Avito</h1>
+    <p>Маркетинг, который привлекает инвестиции. Авито, как он должен работать. Без воды.</p>
+  </header>
+
+  <section class="section">
+    <h2>О нас</h2>
+    <p>Мы запускаем рекламные кампании на Avito, которые не просто видят — на них звонят. Мы не агентство общего профиля. Capital Avito — команда, которая точечно упаковывает проекты под инвестора.</p>
+    <p>Фокус: инвестиционная недвижимость, бизнес, масштабируемые предложения. Мы не распыляемся. Работаем только с инвестициями. От IT до парк-отелей и дорогой недвижимости — мы знаем, как их продавать через Avito.</p>
+  </section>
+
+  <section class="section">
+    <h2>Доверяют нам</h2>
+    <div class="logos">
+      <img src="/logos/estadel.png" alt="Estadel">
+      <img src="/logos/sklad.png" alt="Твой Склад">
+      <img src="/logos/buhlogo.png" alt="Бухлого Парк">
+      <img src="/logos/angel.png" alt="Angel Wings">
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Что вы получаете</h2>
+    <div class="metrics">
+      <div class="metric">
+        <h3>100–150</h3>
+        <p>заявок в месяц от инвесторов</p>
+      </div>
+      <div class="metric">
+        <h3>70 000 ₽</h3>
+        <p>рекламный бюджет</p>
+      </div>
+      <div class="metric">
+        <h3>2–3%</h3>
+        <p>конверсия в инвестиции</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section expertise">
+    <h2>Почему мы</h2>
+    <p>Запускали более 30 инвестиционных направлений. Понимаем, как думает инвестор, на какие заголовки и визуалы он кликает. Мы задроты своей ниши.</p>
+    <p>Анализируем отдел продаж, вникаем в воронку, помогаем со скриптами. У нас даже есть видеоуроки — как закрывать заявки с Avito.</p>
+    <p>Ваша задача — масштабировать инвестиции. Наша — привлекать стабильный поток целевых лидов с низкой стоимостью и высоким доверием.</p>
+  </section>
+
+  <section class="cta">
+    <h2>Напишите нам в Telegram</h2>
+    <a href="https://t.me/potentiaal" target="_blank">@potentiaal</a>
+  </section>
+
+</body>
+</html>
